@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var monedas = require('./routes/moneda');
 
 var app = express();
 
@@ -23,8 +24,15 @@ app.use(cookieParser());
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+//app.use(session({ secret: 'ssshhhhh', saveUninitialized: true, resave: true })); //activar la session
+
+
+
 app.use('/', routes);
 app.use('/users', users);
+app.use('/moneda',monedas);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
