@@ -3,13 +3,25 @@
 
 const sql = require('mssql');
 
-config = {
-    user: 'desarrollo',
-    password: 'desarrollo',
-    server: '.\\SQLEXPRESS2',
+var config = {
+    user: 'usr_ods_test',
+    password: 'zu0ch9X9',
+    server: 'CLSASQLT01',
     database: 'BD_Ods_Inversiones_Replica',
-    
+    port : '1433',
 }
+
+
+//var config = {
+//    user: 'desarrollo',
+//    password: 'desarrollo',
+//    server: '.\\SQLEXPRESS2',
+//    database: 'BD_Ods_Inversiones_Replica',
+//    options: {
+//        encrypt: false // Use this if you're on Windows Azure 
+//    }
+//}
+
 
 //var config = {
 //    userName: 'desarrollo', // update me
@@ -62,26 +74,90 @@ config = {
 
 
 
-function getAllMonedas(req, res, next) {
-    console.log("ENtre 1");
 
-    sql.connect(config, function (err) {
+function getAllMonedas(req, res, next) {
+    
+    
+    
+    
+    const pool1 = new sql.ConnectionPool(config, function(err) {
+        // ... error checks 
         
-        if (err) console.log(err);
+        // Query 
         
-        // create Request object
-        var request = new sql.Request();
+        pool1.request()// or: new sql.Request(pool1) 
+            .query('select * from Moneda', function(err, result) {
+            
+            res.status(200).json(result);
+                
+            //res.send(result);
+            console.dir(result)
+            })
+ 
+        })
+    
+    pool1.on('error', function (err)  {
+        console.log(err)
+    })
+ 
+
+    //const pool1 = new sql.ConnectionPool(config, err => {
+    //    // ... error checks 
         
-        // query to the database and get the records
-        request.query('select * from Moneda', function (err, recordset) {
+    //    // Query 
+        
+    //    pool1.request()// or: new sql.Request(pool1) 
+    //        .query('select * from Moneda', (err, result) => {
             
-            if (err) console.log(err)
+    //            res.send(result);
+    //            console.dir(result)
+    //        })
+ 
+    //    })
+    
+    //pool1.on('error', err => {
+    //// ... error handler 
+    //})
+ 
+
+
+    
+    //sql.connect(config).then(() => {
+    //    return sql.query` select * from Moneda`
+    //}).then(result => {
+    //    res.send(result);
+
+    //    console.dir(result)
+    //    sql.close()
+
+    //}).catch(err => {
+    //    console.log(err);
+    //})
+    
+    //sql.on('error', err => {
+    //// ... error handler 
+    //})    
+
+
+
+    //sql.connect(config, function (err) {
+        
+    //    if (err) console.log(err);
+        
+    //    // create Request object
+    //    var request = new sql.Request();
+        
+    //    // query to the database and get the records
+    //    request.query('select * from Moneda', function (err, recordset) {
             
-            // send records as a response
-            res.send(recordset);
+    //        if (err) console.log(err)
             
-        });
-    });
+    //        // send records as a response
+    //        res.send(recordset);
+            
+    //    });
+    //});
+
 
 };
 
