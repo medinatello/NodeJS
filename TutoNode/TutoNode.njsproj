@@ -36,6 +36,7 @@
     <Compile Include="app.js" />
     <Compile Include="models\moneda.js" />
     <Compile Include="models\users.js" />
+    <Compile Include="public\controllers\app.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\moneda.js" />
     <Compile Include="routes\users.js" />
@@ -53,6 +54,7 @@
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
+    <Folder Include="public\controllers\" />
     <Folder Include="public\stylesheets\" />
     <Folder Include="routes\" />
     <Folder Include="views\" />

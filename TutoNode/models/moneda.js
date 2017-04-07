@@ -1,10 +1,10 @@
 ﻿const sql = require('mssql');
 
 var config = {
-    user: '',
-    password: '',
-    server: 'CLSASQLT01',
-    database: 'BD_Ods_Inversiones',
+    user: 'desarrollo',
+    password: 'desarrollo',
+    server: 'PC14PV0167\\SQLEXPRESS2',
+    database: 'TutoNode',
     port : '1433',
 }
 
@@ -19,13 +19,12 @@ function getAllMonedas(req, res, next) {
         // Query 
         
         pool1.request()// or: new sql.Request(pool1) 
-            .query('select * from report.TblDesarrolloRentaFijaa', function (err, result) {
+            .query('select * from moneda', function (err, result) {
             res.status(200).json(result);
             console.dir(result)
         })
     })
     
-    console.log("PAse");
     pool1.on('error', function (err) {
         console.log(err)
     })
