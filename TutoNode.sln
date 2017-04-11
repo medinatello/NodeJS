@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "TutoNode", "TutoNode\TutoNode.njsproj", "{07DFA94A-AC49-48E7-8022-C68DD61F3916}"
 EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "TutoNode2", "TutoNode2\TutoNode2.njsproj", "{6D923DE3-4AE2-45DD-8981-62EC4614DF78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{07DFA94A-AC49-48E7-8022-C68DD61F3916}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07DFA94A-AC49-48E7-8022-C68DD61F3916}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07DFA94A-AC49-48E7-8022-C68DD61F3916}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D923DE3-4AE2-45DD-8981-62EC4614DF78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D923DE3-4AE2-45DD-8981-62EC4614DF78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D923DE3-4AE2-45DD-8981-62EC4614DF78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D923DE3-4AE2-45DD-8981-62EC4614DF78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
