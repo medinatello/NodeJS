@@ -1,0 +1,27 @@
+﻿<!--
+  Author - Anjana Wijesundara
+  Content - wsanjana951@gmail.com
+-->
+<h2>Usuarios</h2>
+<div class="table-responsive" ng-controller="monedaListControler">
+    <table class="table table-condensed table-bordered">
+        <thead>
+            <tr>
+                <th> IdMoneda </th>
+                <th> NombreMoneda </th>
+                <th> Fecha </th>
+                <th> Activo </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="moneda in monedas | orderBy: 'IdMoneda'">
+                <td> {{moneda.IdMoneda}} </td>
+                <td> {{moneda.NombreMoneda}} </td>
+                <td> {{moneda.Fecha}} </td>
+                <td> <input class="form-control input-sm" type="checkbox" ng-model="moneda.Activo" ng-disabled="true" /> </td>
+            </tr>
+        </tbody>
+    </table>
+    <a class="btn btn-success" href="/">Cerrar Sesión</a>
+
+</div>

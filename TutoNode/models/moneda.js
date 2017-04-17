@@ -20,8 +20,8 @@ function getAllMonedas(req, res, next) {
         
         pool1.request()// or: new sql.Request(pool1) 
             .query('select * from moneda', function (err, result) {
-            res.status(200).json(result);
-            console.dir(result)
+            res.status(200).json(result.recordset);
+            console.dir(result.recordset)
         })
     })
     
